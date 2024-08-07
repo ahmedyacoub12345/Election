@@ -88,13 +88,9 @@
     <Property Name="ElectionArea" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Governorate" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Elections.dbo.LocalListCandidates' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="LocalListCandidates">
     <Key>
       <PropertyRef Name="CandidateID" />
-      <PropertyRef Name="CandidateName" />
-      <PropertyRef Name="NationalNumber" />
     </Key>
     <Property Name="CandidateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CandidateName" Type="nvarchar" MaxLength="255" Nullable="false" />
@@ -173,24 +169,9 @@ warning 6002: The table/view 'Elections.dbo.LocalListCandidates' does not have a
     <EntitySet Name="GeneralListCandidates" EntityType="Self.GeneralListCandidates" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GeneralListing" EntityType="Self.GeneralListing" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LocalList" EntityType="Self.LocalList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LocalListCandidates" EntityType="Self.LocalListCandidates" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LocalListCandidates" EntityType="Self.LocalListCandidates" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [LocalListCandidates].[CandidateID] AS [CandidateID], 
-    [LocalListCandidates].[CandidateName] AS [CandidateName], 
-    [LocalListCandidates].[NationalNumber] AS [NationalNumber], 
-    [LocalListCandidates].[Gender] AS [Gender], 
-    [LocalListCandidates].[Religion] AS [Religion], 
-    [LocalListCandidates].[Type_Chair] AS [Type_Chair], 
-    [LocalListCandidates].[BirthdateCandidate] AS [BirthdateCandidate], 
-    [LocalListCandidates].[Governorate] AS [Governorate], 
-    [LocalListCandidates].[ElectionArea] AS [ElectionArea], 
-    [LocalListCandidates].[NumberOfVotesCandidate] AS [NumberOfVotesCandidate], 
-    [LocalListCandidates].[LocalListingID] AS [LocalListingID], 
-    [LocalListCandidates].[Status] AS [Status]
-    FROM [dbo].[LocalListCandidates] AS [LocalListCandidates]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK__GeneralLi__Gener__403A8C7D" Association="Self.FK__GeneralLi__Gener__403A8C7D">
       <End Role="GeneralListing" EntitySet="GeneralListing" />
       <End Role="GeneralListCandidates" EntitySet="GeneralListCandidates" />

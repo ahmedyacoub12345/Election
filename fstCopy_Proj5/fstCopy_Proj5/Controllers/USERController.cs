@@ -233,24 +233,15 @@ namespace E_Voting.Controllers
         [HttpPost]
         public ActionResult PartyElections(int selectedPartyListId)
         {
-            // Check if user is logged in
             if (Session["LoggedUser"] == null)
             {
                 return RedirectToAction("Login");
             }
 
-            // Deserialize user from session
             var userJson = Session["LoggedUser"].ToString();
             var user = JsonConvert.DeserializeObject<User>(userJson);
 
-            // Verify the type of selectedPartyListId
-            if (selectedPartyListId.GetType() != typeof(int))
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Invalid ID type");
-            }
-
-            // Find the selected party list
-            var selectedPartyList = DB.GeneralListings.Find(selectedPartyListId);
+            var selectedPartyList = DB.GeneralListings.Where(x=> x.GeneralListingID  == selectedPartyListId).FirstOrDefault();
             if (selectedPartyList != null)
             {
                 // Update user table to reflect that the user has voted in party elections
@@ -263,17 +254,9 @@ namespace E_Voting.Controllers
                 DB.Entry(user).State = System.Data.Entity.EntityState.Modified; // Ensure user entity is being tracked
                 DB.SaveChanges();
             }
-            else
-            {
-                // Handle the case where the party list ID was not found
-                // For example, log an error or show a message to the user
-                return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Party list not found");
-            }
 
             return RedirectToAction("TypeOfElection", new { id = user.ID });
         }
-
-
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////

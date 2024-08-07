@@ -33,8 +33,8 @@ namespace fstCopy_Proj5.Models
         public virtual DbSet<GeneralListCandidate> GeneralListCandidates { get; set; }
         public virtual DbSet<GeneralListing> GeneralListings { get; set; }
         public virtual DbSet<LocalList> LocalLists { get; set; }
+        public virtual DbSet<LocalListCandidate> LocalListCandidates { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<LocalListCandidate> LocalListCandidates { get; set; }
     }
 }

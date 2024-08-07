@@ -97,6 +97,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="LocalListCandidates">
+      <EntityTypeMapping TypeName="ElectionsModel.LocalListCandidate">
+        <MappingFragment StoreEntitySet="LocalListCandidates">
+          <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+          <ScalarProperty Name="CandidateName" ColumnName="CandidateName" />
+          <ScalarProperty Name="NationalNumber" ColumnName="NationalNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Type_Chair" ColumnName="Type_Chair" />
+          <ScalarProperty Name="BirthdateCandidate" ColumnName="BirthdateCandidate" />
+          <ScalarProperty Name="Governorate" ColumnName="Governorate" />
+          <ScalarProperty Name="ElectionArea" ColumnName="ElectionArea" />
+          <ScalarProperty Name="NumberOfVotesCandidate" ColumnName="NumberOfVotesCandidate" />
+          <ScalarProperty Name="LocalListingID" ColumnName="LocalListingID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Payments">
       <EntityTypeMapping TypeName="ElectionsModel.Payment">
         <MappingFragment StoreEntitySet="Payment">
@@ -125,24 +143,6 @@
           <ScalarProperty Name="PartyElections" ColumnName="PartyElections" />
           <ScalarProperty Name="whitePaperLocalElections" ColumnName="whitePaperLocalElections" />
           <ScalarProperty Name="whitePaperPartyElections" ColumnName="whitePaperPartyElections" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="LocalListCandidates">
-      <EntityTypeMapping TypeName="ElectionsModel.LocalListCandidate">
-        <MappingFragment StoreEntitySet="LocalListCandidates">
-          <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
-          <ScalarProperty Name="CandidateName" ColumnName="CandidateName" />
-          <ScalarProperty Name="NationalNumber" ColumnName="NationalNumber" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Religion" ColumnName="Religion" />
-          <ScalarProperty Name="Type_Chair" ColumnName="Type_Chair" />
-          <ScalarProperty Name="BirthdateCandidate" ColumnName="BirthdateCandidate" />
-          <ScalarProperty Name="Governorate" ColumnName="Governorate" />
-          <ScalarProperty Name="ElectionArea" ColumnName="ElectionArea" />
-          <ScalarProperty Name="NumberOfVotesCandidate" ColumnName="NumberOfVotesCandidate" />
-          <ScalarProperty Name="LocalListingID" ColumnName="LocalListingID" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
