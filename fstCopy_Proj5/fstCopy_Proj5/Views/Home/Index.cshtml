@@ -1,4 +1,4 @@
-﻿
+﻿@model List<fstCopy_Proj5.Models.CircleViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -29,30 +29,228 @@
     <link href=@Url.Content("/Content/libs/venobox/styles/venobox.css") rel="stylesheet" type="text/css">
     <link href=@Url.Content("/Content/css/styles.css") rel="stylesheet" type="text/css">
 
-    <style>
+   <style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
 
-        .container {
-            width:90% !important;
-        }
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
 
+    /* Slider Styles */
+    .slider-wrap {
+        position: relative;
+    }
 
-        #map {
-            width: 100%;
-            height: 600px;
-        }
+    .slider_item_container {
+        position: relative;
+        color: #fff;
+    }
 
-        .custom-icon {
-            background-color: red;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-        .theme-custom-box-animation {
-            width: 100% !important;
-            height: 70vh !important;
-        }
+    .background-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-    </style>
+    .slider-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    /* Event Layout */
+    .event-layout-1 {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        overflow: hidden;
+    }
+
+    .event-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .event-info {
+        padding: 20px;
+    }
+
+    .event-date {
+        color: #555;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .event-info h4 a {
+        color: #333;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .event-exceprt {
+        color: #666;
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+    .event-time {
+        color: #888;
+        font-size: 14px;
+    }
+
+    .event-time a {
+        color: #888;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+
+    .event-time a i {
+        margin-right: 5px;
+    }
+
+    /* Highlight Carousel */
+    .highlight-layout-1 {
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .highlight-layout-1 figure img {
+        width: 100%;
+        height: auto;
+    }
+
+    .highlight-layout-1 h5 a {
+        color: #333;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .highlight-layout-1 div {
+        color: #666;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .highlight-layout-1 .btn {
+        margin-top: 10px;
+    }
+
+    /* Counter Block */
+    .counter-block-1 {
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .counter {
+        font-size: 24px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .icon {
+        font-size: 40px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .section-content-block {
+        padding: 60px 0;
+    }
+
+    .section-secondary-bg {
+        background-color: #f8f9fa;
+    }
+
+    .section-custom-bg {
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        padding: 60px 0;
+    }
+
+    .section-heading-wrapper h2 {
+        margin-bottom: 20px;
+    }
+
+    .section-heading-wrapper h4 {
+        color: #666;
+    }
+
+    .btn-theme {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .btn-theme-invert {
+        background-color: #fff;
+        color: #007bff;
+        border: 1px solid #007bff;
+    }
+
+    .btn-small {
+        padding: 5px 10px;
+    }
+
+    .heading-separator-horizontal {
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: #007bff;
+        margin: 10px auto;
+    }
+
+    .horizontal-newsletter input {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 80%;
+        margin-right: 10px;
+    }
+
+    .horizontal-newsletter button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* Back to Top Button */
+    #backTop {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #007bff;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        display: none;
+    }
+</style>
+
 
 </head>
 <body>
@@ -181,7 +379,7 @@
         </div>*@
 
 
-        <!--<section class="section-content-block section-custom-bg" data-bg_img='/Content/images/blue.jpg' data-bg_size='cover' data-bg_position='center center' data-bg_opacity="0" data-b>
+    <!--<section class="section-content-block section-custom-bg" data-bg_img='/Content/images/blue.jpg' data-bg_size='cover' data-bg_position='center center' data-bg_opacity="0" data-b>
 
     <div class="container">
 
@@ -194,308 +392,250 @@
                 <h2 class="extra-large">GET READY FOR ELECTION</h2>
 
             </div>-->
-        <!-- end .col-sm-10  -->
-        <!--</div>
+    <!-- end .col-sm-10  -->
+    <!--</div>
 
     <div class="row">
 
         <div class="col-sm-12 text-center wow zoomIn">
             <div id="countdown_block" data-countdown_date="2026/03/27"></div>
         </div>-->
-        <!-- end .col-sm-12  -->
-        <!--</div>--> <!-- end .row  -->
-        <!--</div>--> <!-- end .container-fluid  -->
-        <!--</section>--> <!-- end .activity-section-1  -->
-        <br />
-        <br />
+    <!-- end .col-sm-12  -->
+    <!--</div>--> <!-- end .row  -->
+    <!--</div>--> <!-- end .container-fluid  -->
+    <!--</section>--> <!-- end .activity-section-1  -->
+    <br />
+    <br />
 
-        <section class="section-content-block section-custom-bg" data-bg_img='/Content/images/blue.jpg' data-bg_size='cover' data-bg_position='top center' data-bg_opacity="0" style="width:100% !important">
+    @*card_section*@
 
-            <div class="container">
-                <div class="row section-heading-wrapper-alt">
 
-                    <div class="col-md-12 col-sm-12 text-center no-img-separator">
-                        <h4>Cabinet Members</h4>
-                        <span class="heading-separator heading-separator-horizontal"></span>
-                        <h2 class="extra-large">GROUP OF TALENTED LEADERS</h2>
 
-                    </div> <!-- end .col-sm-10  -->
 
-                </div>
+
+
+
+
+
+
+
+    @*<div class="result_container">
+            <div class="row">
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow border">
+                            <div class="card-body">
+                                <h5 class="card-title">Circle @(i + 1)</h5>
+                                <p class="card-text">Local Votes: @Model[i].localvotecounter</p>
+                                <p class="card-text">White Votes: @Model[i].whitelocalcounter</p>
+                                <p class="card-text">Total Votes: @Model[i].totalVotes</p>
+                                <p class="card-text">Threshold: @Model[i].threshold</p>
+
+                                <h6 class="card-subtitle mb-2 text-muted">Winning Lists</h6>
+                                @if (((IEnumerable<double>)Model[i].winning_lists).Any())
+                                {
+                                    foreach (var list in ((IEnumerable<double>)Model[i].winning_lists).Where(l => l.ActualSeats > 0))
+                                    {
+                                        <div class="list-group mb-3">
+                                            <h6 class="list-group-item list-group-item-action active">@list.LocalListCandidates - @list.NumberOfVotes (Seats: @list.ActualSeats)</h6>
+                                            @if (Model[i].winningCandidates.ContainsKey(list.ID))
+                                            {
+                                                foreach (var candidate in Model[i].winningCandidates[list.ID])
+                                                {
+                                                    <div class="list-group-item">@candidate.CandidateName - @candidate.NumberOfVotesCandidate</div>
+                                                }
+                                            }
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <p class="card-text">No winning lists</p>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
+        </div>*@
 
-            <div class="container wow fadeInLeft">
 
-                <div class="row">
 
-                    <div class="col-md-4 col-sm-12">
 
-                        <div class="team-layout-1 theme-custom-box-shadow theme-custom-box-animation">
 
-                            <figure class="team-member">
-                                <a href="#" title="ALEXANDER GARY">
-                                    <img src="/Content/images/team_9.jpg" alt="ALEXANDER GARY">
-                                </a>
 
-                            </figure> <!-- end. team-member  -->
 
-                            <article class="team-info">
-                                <h3>ALEXANDER GARY</h3>
-                                <h4>Finance Head</h4>
-                            </article>
 
-                            <div class="team-content">
 
-                                <div class="team-social-share text-center clearfix">
-                                    <a class="fa fa-facebook rectangle" href="#" title="Facebook"></a>
-                                    <a class="fa fa-twitter rectangle" href="#" title="Twitter"></a>
-                                    <a class="fa fa-instagram rectangle" href="#" title="Google Plus"></a>
-                                    <a class="fa fa-linkedin rectangle" href="#" title="Linkedin"></a>
-                                </div> <!-- end .author-social-box  -->
+    <div class="container">
+        <!-- Include the Local Result Partial View -->
+        @Html.Action("LocalResult", "Result")
+    </div>
 
-                            </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
-                        </div> <!--  end team-layout-1 -->
 
-                    </div> <!--  end .col-md-4 col-sm-12  -->
 
-                    <div class="col-md-4 col-sm-12">
 
-                        <div class="team-layout-1 theme-custom-box-shadow theme-custom-box-animation">
 
-                            <figure class="team-member">
-                                <a href="#" title="MELISSA MUNOZ">
-                                    <img src="/Content/images/team_6.jpg" alt="MELISSA MUNOZ">
-                                </a>
 
-                            </figure> <!-- end. team-member  -->
 
-                            <article class="team-info">
-                                <h3>MELISSA MUNOZ</h3>
-                                <h4>Managing Director</h4>
-                            </article>
 
-                            <div class="team-content">
+    <div class="container">
+        <!-- Include the Local Result Partial View -->
+        @Html.Action("Index", "DATEs")
+    </div>
 
-                                <div class="team-social-share text-center clearfix">
-                                    <a class="fa fa-facebook rectangle" href="#" title="Facebook"></a>
-                                    <a class="fa fa-twitter rectangle" href="#" title="Twitter"></a>
-                                    <a class="fa fa-instagram rectangle" href="#" title="Google Plus"></a>
-                                    <a class="fa fa-linkedin rectangle" href="#" title="Linkedin"></a>
-                                </div> <!-- end .author-social-box  -->
 
-                            </div>
 
-                        </div> <!--  end team layout-1 -->
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
-                    </div> <!--  end .col-md-4 col-sm-12  -->
 
-                    <div class="col-md-4 col-sm-12">
 
-                        <div class="team-layout-1 theme-custom-box-shadow theme-custom-box-animation">
+    <div class="container">
+        <!-- Include the Local Result Partial View -->
+        @Html.Action("IndexDebatsesHome", "Debates1")
+    </div>
 
-                            <figure class="team-member">
-                                <a href="#" title="JOHN ABRAHAM">
-                                    <img src="/Content/images/team_7.jpg" alt="JOHN ABRAHAM">
-                                </a>
 
-                            </figure> <!-- end. team-member  -->
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
-                            <article class="team-info">
-                                <h3>JOHN ABRAHAM</h3>
-                                <h4>Sr. Support Executive</h4>
-                            </article>
-                            <div class="team-content">
+    <div class="container">
+        <!-- Include the Local Result Partial View -->
+        @Html.Action("Index", "PartyResult")
+    </div>
 
-                                <div class="team-social-share text-center clearfix">
-                                    <a class="fa fa-facebook rectangle" href="#" title="Facebook"></a>
-                                    <a class="fa fa-twitter rectangle" href="#" title="Twitter"></a>
-                                    <a class="fa fa-instagram rectangle" href="#" title="Google Plus"></a>
-                                    <a class="fa fa-linkedin rectangle" href="#" title="Linkedin"></a>
-                                </div> <!-- end .author-social-box  -->
 
-                            </div>
 
-                        </div> <!--  end team-layout-1 -->
 
-                    </div> <!--  end .col-md-4 col-sm-12  -->
+    <section class="section-content-block section-secondary-bg">
 
+        <div class="container">
 
-                </div> <!-- end .row  -->
+            <!--  end .row  -->
 
-            </div> <!-- end .container  -->
+            <div class="row wow fadeIn margin-top-24">
 
-        </section>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 
+                    <div class="counter-block-1 text-center">
+                        <i class="fa fa-check icon"></i>
+                        @*<i class="fa fa-gavel icon"></i>*@
+                        <span class="counter">2578</span>
 
-        <section class="section-content-block section-secondary-bg">
+                        <h4 class="text-capitalize">عدد الاصوات  </h4>
 
-            <div class="container">
-
-                <!--  end .row  -->
-
-                <div class="row wow fadeIn margin-top-24">
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-
-                        <div class="counter-block-1 text-center">
-
-                            <i class="fa fa-gavel icon"></i>
-                            <span class="counter">2578</span>
-
-                            <h4 class="text-capitalize">Global Campaigns</h4>
-
-                        </div>
-
-                    </div> <!--  end .col-lg-3  -->
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" >
-
-                        <div class="counter-block-1 text-center">
-
-                            <i class="fa fa-building icon"></i>
-                            <span class="counter">3235</span>
-                            <h4 class="text-capitalize">Hi-tech Industrial </h4>
-
-                        </div>
-
-                    </div> <!--  end .col-lg-3  -->
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" >
-
-                        <div class="counter-block-1 text-center">
-
-                            <i class="fa fa-users icon"></i>
-                            <span class="counter">3568</span>
-                            <h4 class="text-capitalize">Active contributors</h4>
-
-                        </div>
-
-                    </div> <!--  end .col-lg-3  -->
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" >
-
-                        <div class="counter-block-1 text-center">
-
-                            <i class="fa fa-building icon"></i>
-                            <span class="counter">1364</span>
-                            <h4 class="text-capitalize">Parliament </h4>
-
-                        </div>
-
-                    </div> <!--  end .col-lg-3  -->
-
-
-                </div> <!-- end row  -->
-
-            </div> <!--  end .container -->
-
-        </section>  <!--  end .appointment-section  -->
-
-        <section class="section-content-block">
-
-            <div class="container wow slideInUp">
-
-                <div class="row section-heading-wrapper">
-
-                    <div class="col-md-12 col-sm-12 text-left no-img-separator">
-                        <h2>الاعلانات </h2>
-                        <span class="heading-separator heading-separator-horizontal"></span>
-                        <h4>
-                            Join and be a part of our campaigns and make it successful. Your awesome support and fluent participation
-                            is necessary for a successful campaign.
-                        </h4>
-                    </div> <!-- end .col-sm-12  -->
-
-                </div> <!-- end .row  -->
-
-                <div class="row">
-
-                    <div class="col-md-6 col-sm-12">
-                        <div class="event-layout-1 theme-custom-box-shadow clearfix">
-                            <figure class="event-img">
-                                <a href="#">
-                                    <img src="/Content/images/event_1.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="event-info">
-                                <a class="event-date" href="#"><i class="fa fa-calendar-o"></i> 14 January, 2018</a>
-                                <h4>
-                                    <a href="#">Build Nation Together</a>
-                                </h4>
-                                <div class="event-exceprt">Lorem ipsum dolor sit amet turadipi scing elit lobort issim consecte dign pharetra mauris.</div>
-                                <div class="event-time">
-                                    <a href="#"><i class="fa fa-clock-o"></i> 10.00 - 3.00</a>
-                                    <a href="#"> <i class="fa fa-map-marker"></i> California, USA</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="col-md-6 col-sm-12">
-                        <div class="event-layout-1 theme-custom-box-shadow clearfix">
-                            <figure class="event-img">
-                                <a href="#">
-                                    <img src="/Content/images/event_3.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="event-info">
-                                <a class="event-date" href="#"><i class="fa fa-calendar-o"></i> 14 January, 2018</a>
-                                <h4>
-                                    <a href="#">Stop National Racism</a>
-                                </h4>
-                                <div class="event-exceprt">Lorem ipsum dolor sit amet turadipi scing elit lobort issim consecte dign pharetra mauris.</div>
-                                <div class="event-time">
-                                    <a href="#"><i class="fa fa-clock-o"></i> 10.00 - 3.00</a>
-                                    <a href="#"> <i class="fa fa-map-marker"></i> California, USA</a>
-                                </div>
-                            </div>
-                        </div>
+                </div> <!--  end .col-lg-3  -->
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+
+                    <div class="counter-block-1 text-center">
+
+                        <i class="fa fa-building icon"></i>
+                        <span class="counter">3235</span>
+                        <h4 class="text-capitalize"> المشاريع </h4>
+
                     </div>
 
-                    <div class="col-md-6 col-sm-12">
-                        <div class="event-layout-1 theme-custom-box-shadow clearfix">
-                            <figure class="event-img">
-                                <a href="#">
-                                    <img src="/Content/images/event_4.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="event-info">
-                                <a class="event-date" href="#"><i class="fa fa-calendar-o"></i> 14 January, 2018</a>
-                                <h4>
-                                    <a href="#">Freedom People Voice</a>
-                                </h4>
-                                <div class="event-exceprt">Lorem ipsum dolor sit amet turadipi scing elit lobort issim consecte dign pharetra mauris.</div>
-                                <div class="event-time">
-                                    <a href="#"><i class="fa fa-clock-o"></i> 10.00 - 3.00</a>
-                                    <a href="#"> <i class="fa fa-map-marker"></i> California, USA</a>
-                                </div>
-                            </div>
-                        </div>
+                </div> <!--  end .col-lg-3  -->
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+
+                    <div class="counter-block-1 text-center">
+                        @*<i class="fa fa-squar icon"></i>*@
+                        <i class="fa fa-users icon"></i>
+                        <span class="counter">3568</span>
+                        <h4 class="text-capitalize">المساهمين النشطين </h4>
+
                     </div>
 
-                    <div class="col-md-6 col-sm-12">
-                        <div class="event-layout-1 theme-custom-box-shadow clearfix">
-                            <figure class="event-img">
-                                <a href="#">
-                                    <img src="/Content/images/event_2.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="event-info">
-                                <a class="event-date" href="#"><i class="fa fa-calendar-o"></i> 14 January, 2018</a>
-                                <h4>
-                                    <a href="#">Ensure Hear & Heard</a>
-                                </h4>
-                                <div class="event-exceprt">Lorem ipsum dolor sit amet turadipi scing elit lobort issim consecte dign pharetra mauris.</div>
-                                <div class="event-time">
-                                    <a href="#"><i class="fa fa-clock-o"></i> 10.00 - 3.00</a>
-                                    <a href="#"> <i class="fa fa-map-marker"></i> California, USA</a>
-                                </div>
-                            </div>
-                        </div>
+                </div> <!--  end .col-lg-3  -->
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+
+                    <div class="counter-block-1 text-center">
+
+                        <i class="fa fa-building icon"></i>
+                        <span class="counter">1364</span>
+                        <h4 class="text-capitalize">البرلمان </h4>
+
                     </div>
 
+                </div> <!--  end .col-lg-3  -->
+
+
+            </div> <!-- end row  -->
+
+        </div> <!--  end .container -->
+
+    </section>  <!--  end .appointment-section  -->
+
+    <section class="section-content-block">
+
+        <div class="container wow slideInUp">
+
+            <div class="row section-heading-wrapper">
+
+                <div class="col-md-12 col-sm-12 text-left no-img-separator">
+                    <h2>الاعلانات </h2>
+
+                    <span class="heading-separator heading-separator-horizontal"></span>
+                    <h4>
+                        Join and be a part of our campaigns and make it successful. Your awesome support and fluent participation
+                        is necessary for a successful campaign.
+                    </h4>
+                </div> <!-- end .col-sm-12  -->
+
+            </div> <!-- end .row  -->
+
+            <div class="row">
+
+
+
+
+                <div class="container">
+                    <!-- Include the Local Result Partial View -->
+                    @Html.Action("Publishs", "Ads")
                 </div>
+
+
+
+
+
+
+
+
 
                 <div class="row">
                     <div class="col-md-12 col-sm-12 text-center">
@@ -505,44 +645,44 @@
 
             </div> <!--  end .container  -->
 
-        </section>
+    </section>
 
 
-        <section class="section-content-block section-custom-bg" data-bg_img="/Content/images/subscribe_bg.jpg" data-bg_repeat="no-repeat" data-bg_size="cover" data-bg_position="top right" data-bg_color="#264676" data-bg_opacity="0.9" style="width:100% !important">
+    <section class="section-content-block section-custom-bg" data-bg_img="/Content/images/subscribe_bg.jpg" data-bg_repeat="no-repeat" data-bg_size="cover" data-bg_position="top right" data-bg_color="#264676" data-bg_opacity="0.9" style="width:100% !important">
 
-            <div class="container">
+        <div class="container">
 
 
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="row section-heading-wrapper-alt margin-bottom-5">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row section-heading-wrapper-alt margin-bottom-5">
 
-                            <div class="col-md-12 col-sm-12 text-left no-img-separator">
-                                <h4>Subscribe Us</h4>
-                                <span class="heading-separator heading-separator-horizontal"></span>
-                                <h2 class="text-capitalize">
-                                    CAMPAIGN <br>NEWS & UPDATES
-                                </h2>
+                        <div class="col-md-12 col-sm-12 text-left no-img-separator">
+                            <h4>Subscribe Us</h4>
+                            <span class="heading-separator heading-separator-horizontal"></span>
+                            <h2 class="text-capitalize">
+                                CAMPAIGN <br>NEWS & UPDATES
+                            </h2>
 
-                            </div> <!-- end .col-sm-10  -->
+                        </div> <!-- end .col-sm-10  -->
 
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="horizontal-newsletter margin-top-60">
-                            <form id="mc-form" class="mc-form fix" action="#">
-                                <div class="news-subscription square-layout">
-                                    <input id="mc-email" name="EMAIL" placeholder="Email Address..." type="email">
-                                    <button id="mc-submit" type="submit"> Submit</button>
-                                </div>
-                            </form>
-                        </div> <!--  end .footer-widget  -->
                     </div>
                 </div>
-
+                <div class="col-sm-6">
+                    <div class="horizontal-newsletter margin-top-60">
+                        <form id="mc-form" class="mc-form fix" action="#">
+                            <div class="news-subscription square-layout">
+                                <input id="mc-email" name="EMAIL" placeholder="Email Address..." type="email">
+                                <button id="mc-submit" type="submit"> Submit</button>
+                            </div>
+                        </form>
+                    </div> <!--  end .footer-widget  -->
+                </div>
             </div>
 
-        </section> <!-- تحديد الخريطة باستخدام JavaScript -->
+        </div>
+
+    </section> <!-- تحديد الخريطة باستخدام JavaScript -->
 
 
 
@@ -558,29 +698,29 @@
 
 
 
-        
 
 
 
 
 
 
-        <a id="backTop">Back To Top</a>
 
-        <script src="@Url.Content("/Content/libs/jquery/scripts/jquery.min.js")"></script>
-        <script src="@Url.Content("/Content/libs/bootstrap/scripts/bootstrap.min.js")"></script>
-        <script src="@Url.Content("/Content/libs/wow/scripts/wow.min.js")"></script>
-        <script src="@Url.Content("/Content/libs/jquery.backTop/scripts/jquery.backTop.min.js")"></script>
-        <script src="@Url.Content("/Content/libs/waypoints/scripts/waypoints.min.js")"></script>
-        <script src="@Url.Content("/Content/libs/waypoints/scripts/waypoints-sticky.min.js")"></script>
-        <script src="@Url.Content("/Content/libs/owl.carousel/scripts/owl.carousel.min.js")"></script>
-        <script src="@Url.Content("/Content/libs/jquery.stellar/scripts/jquery.stellar.min.js")"></script>
-        <script src="@Url.Content("/Content/libs/jquery.counterup/scripts/jquery.counterup.min.js")"></script>
-        <script src="@Url.Content("/Content/libs/venobox/scripts/venobox.min.js")"></script>
-        <script src="@Url.Content("/Content/libs/jquery.countdown/scripts/jquery.countdown.min.js")"></script>
-        <script src="@Url.Content("/Content/js/custom-scripts.js")"></script>
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <a id="backTop">Back To Top</a>
+
+    <script src="@Url.Content("/Content/libs/jquery/scripts/jquery.min.js")"></script>
+    <script src="@Url.Content("/Content/libs/bootstrap/scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("/Content/libs/wow/scripts/wow.min.js")"></script>
+    <script src="@Url.Content("/Content/libs/jquery.backTop/scripts/jquery.backTop.min.js")"></script>
+    <script src="@Url.Content("/Content/libs/waypoints/scripts/waypoints.min.js")"></script>
+    <script src="@Url.Content("/Content/libs/waypoints/scripts/waypoints-sticky.min.js")"></script>
+    <script src="@Url.Content("/Content/libs/owl.carousel/scripts/owl.carousel.min.js")"></script>
+    <script src="@Url.Content("/Content/libs/jquery.stellar/scripts/jquery.stellar.min.js")"></script>
+    <script src="@Url.Content("/Content/libs/jquery.counterup/scripts/jquery.counterup.min.js")"></script>
+    <script src="@Url.Content("/Content/libs/venobox/scripts/venobox.min.js")"></script>
+    <script src="@Url.Content("/Content/libs/jquery.countdown/scripts/jquery.countdown.min.js")"></script>
+    <script src="@Url.Content("/Content/js/custom-scripts.js")"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
 
 </body>

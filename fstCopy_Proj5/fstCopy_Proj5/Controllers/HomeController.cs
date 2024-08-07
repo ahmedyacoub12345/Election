@@ -13,5 +13,18 @@ namespace fstCopy_Proj5.Controllers
         {
             return View();
         }
+        public ActionResult About()
+        {
+            return View();
+        }
+        public ActionResult CotactUs()
+        {
+            return View();
+        }
+        public ActionResult Faq()
+        {
+            return View();
+        }
     }
+
 }

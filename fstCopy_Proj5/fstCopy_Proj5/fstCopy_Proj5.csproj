@@ -298,9 +298,11 @@
     <Content Include="Content\readme.txt" />
     <Content Include="Content\single.html" />
     <Content Include="Global.asax" />
+    <Content Include="images\As-salt.jpg" />
     <Content Include="images\images.jpg" />
     <Content Include="images\images.png" />
     <Content Include="images\jordan.jpg" />
+    <Content Include="images\king.jpg" />
     <Content Include="images\share-image.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -319,6 +321,7 @@
     <Compile Include="Controllers\AdsController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DATEsController.cs" />
+    <Compile Include="Controllers\Debates1Controller.cs" />
     <Compile Include="Controllers\GeneralListCandidatesController.cs" />
     <Compile Include="Controllers\GeneralListingsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -446,6 +449,16 @@
     <Content Include="Views\USER\LocalElections.cshtml" />
     <Content Include="Views\USER\PartyElections.cshtml" />
     <Content Include="Views\USER\ElectionDistricts.cshtml" />
+    <Content Include="Views\Debates1\Index.cshtml" />
+    <Content Include="Views\Debates1\Details.cshtml" />
+    <Content Include="Views\Debates1\Create.cshtml" />
+    <Content Include="Views\Debates1\Edit.cshtml" />
+    <Content Include="Views\Debates1\Delete.cshtml" />
+    <Content Include="Views\Debates1\IndexDebatsesHome.cshtml" />
+    <Content Include="Views\Ads\Publishs.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\CotactUs.cshtml" />
+    <Content Include="Views\Home\Faq.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

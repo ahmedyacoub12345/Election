@@ -187,6 +187,10 @@ namespace E_Voting.Controllers
 
             if (selectedList != null && selectedCandidateIds != null)
             {
+                if (selectedList.NumberOfVotes == null)
+                {
+                    selectedList.NumberOfVotes = 0;
+                }
                 // Update the number of votes for the selected list
                 selectedList.NumberOfVotes += 1;
                 DB.Entry(selectedList).State = System.Data.Entity.EntityState.Modified;
@@ -197,6 +201,10 @@ namespace E_Voting.Controllers
                     var selectedCandidate = DB.LocalListCandidates.FirstOrDefault(c => c.CandidateID == candidateId && c.LocalListingID == selectedListId);
                     if (selectedCandidate != null)
                     {
+                        if (selectedCandidate.NumberOfVotesCandidate == null)
+                        {
+                            selectedCandidate.NumberOfVotesCandidate = 0;
+                        }
                         selectedCandidate.NumberOfVotesCandidate += 1;
                         DB.Entry(selectedCandidate).State = System.Data.Entity.EntityState.Modified;
                     }
@@ -247,7 +255,10 @@ namespace E_Voting.Controllers
                 // Update user table to reflect that the user has voted in party elections
                 user.PartyElections = true;
                 user.LocalElections = true; // Optionally, you can set LocalElections to true here if needed
-
+                if (selectedPartyList.NumberOfVotes == null)
+                {
+                    selectedPartyList.NumberOfVotes = 0;
+                }
                 // Update the party list to increment the number of votes
                 selectedPartyList.NumberOfVotes += 1;
                 DB.Entry(selectedPartyList).State = System.Data.Entity.EntityState.Modified;
@@ -295,7 +306,7 @@ namespace E_Voting.Controllers
                     return RedirectToAction("Login");
                 }
 
-                user.ElectionArea = "Area 1"; // Setting election area to IrbedFirstDistrict
+                user.ElectionArea = "اربد الأولى"; // Setting election area to IrbedFirstDistrict
                 DB.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 DB.SaveChanges();
 
@@ -329,7 +340,7 @@ namespace E_Voting.Controllers
                     return RedirectToAction("Login");
                 }
 
-                user.ElectionArea = "Area 2"; // Setting election area to IrbedFirstDistrict
+                user.ElectionArea = "اربد الثانية"; // Setting election area to IrbedFirstDistrict
                 DB.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 DB.SaveChanges();
 
@@ -362,7 +373,7 @@ namespace E_Voting.Controllers
                     return RedirectToAction("Login");
                 }
 
-                user.ElectionArea = "Area 3"; // Setting election area to IrbedFirstDistrict
+                user.ElectionArea = "عجلون"; // Setting election area to IrbedFirstDistrict
                 DB.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 DB.SaveChanges();
 

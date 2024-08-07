@@ -1,4 +1,8 @@
-﻿@using (Html.BeginForm("PartyElections", "User", FormMethod.Post))
+﻿@{ 
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+}
+@using (Html.BeginForm("PartyElections", "User", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
