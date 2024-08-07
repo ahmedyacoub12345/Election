@@ -29,227 +29,362 @@
     <link href=@Url.Content("/Content/libs/venobox/styles/venobox.css") rel="stylesheet" type="text/css">
     <link href=@Url.Content("/Content/css/styles.css") rel="stylesheet" type="text/css">
 
-   <style>
-    /* General Styles */
-    body {
-        font-family: Arial, sans-serif;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
+    <style>
+        /* General Styles */
 
-    .container {
-        width: 90%;
-        margin: 0 auto;
-    }
+        /* Slider Styles */
+        .slider-wrap {
+            position: relative;
+        }
 
-    /* Slider Styles */
-    .slider-wrap {
-        position: relative;
-    }
+        .slider_item_container {
+            position: relative;
+            color: #fff;
+        }
 
-    .slider_item_container {
-        position: relative;
-        color: #fff;
-    }
+        .background-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .background-video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+        .slider-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
 
-    .slider-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
+        /* Event Layout */
+        .event-layout-1 {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            overflow: hidden;
+        }
 
-    /* Event Layout */
-    .event-layout-1 {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-        overflow: hidden;
-    }
+        .event-img img {
+            width: 100%;
+            height: auto;
+        }
 
-    .event-img img {
-        width: 100%;
-        height: auto;
-    }
+        .event-info {
+            padding: 20px;
+        }
 
-    .event-info {
-        padding: 20px;
-    }
+        .event-date {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
 
-    .event-date {
-        color: #555;
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
+        .event-info h4 a {
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-    .event-info h4 a {
-        color: #333;
-        font-size: 18px;
-        font-weight: bold;
-        text-decoration: none;
-    }
+        .event-exceprt {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0;
+        }
 
-    .event-exceprt {
-        color: #666;
-        font-size: 14px;
-        margin: 10px 0;
-    }
+        .event-time {
+            color: #888;
+            font-size: 14px;
+        }
 
-    .event-time {
-        color: #888;
-        font-size: 14px;
-    }
+            .event-time a {
+                color: #888;
+                text-decoration: none;
+                margin-right: 10px;
+            }
 
-    .event-time a {
-        color: #888;
-        text-decoration: none;
-        margin-right: 10px;
-    }
+                .event-time a i {
+                    margin-right: 5px;
+                }
 
-    .event-time a i {
-        margin-right: 5px;
-    }
+        /* Highlight Carousel */
+        .highlight-layout-1 {
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    /* Highlight Carousel */
-    .highlight-layout-1 {
-        border-radius: 8px;
-        overflow: hidden;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+            .highlight-layout-1 figure img {
+                width: 100%;
+                height: auto;
+            }
 
-    .highlight-layout-1 figure img {
-        width: 100%;
-        height: auto;
-    }
+            .highlight-layout-1 h5 a {
+                color: #333;
+                font-size: 18px;
+                text-decoration: none;
+            }
 
-    .highlight-layout-1 h5 a {
-        color: #333;
-        font-size: 18px;
-        text-decoration: none;
-    }
+            .highlight-layout-1 div {
+                color: #666;
+                font-size: 14px;
+                padding: 10px;
+            }
 
-    .highlight-layout-1 div {
-        color: #666;
-        font-size: 14px;
-        padding: 10px;
-    }
+            .highlight-layout-1 .btn {
+                margin-top: 10px;
+            }
 
-    .highlight-layout-1 .btn {
-        margin-top: 10px;
-    }
+        /* Counter Block */
+        .counter-block-1 {
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
 
-    /* Counter Block */
-    .counter-block-1 {
-        padding: 20px;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-    }
+        .counter {
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+        }
 
-    .counter {
-        font-size: 24px;
-        color: #333;
-        font-weight: bold;
-    }
+        .icon {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
 
-    .icon {
-        font-size: 40px;
-        color: #007bff;
-        margin-bottom: 10px;
-    }
 
-    .section-content-block {
-        padding: 60px 0;
-    }
+        .section-secondary-bg {
+            background-color: #f8f9fa;
+        }
 
-    .section-secondary-bg {
-        background-color: #f8f9fa;
-    }
+        .section-custom-bg {
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
 
-    .section-custom-bg {
-        background-size: cover;
-        background-position: center;
-        color: #fff;
-        padding: 60px 0;
-    }
+        .section-heading-wrapper h2 {
+            margin-bottom: 20px;
+        }
 
-    .section-heading-wrapper h2 {
-        margin-bottom: 20px;
-    }
+        .section-heading-wrapper h4 {
+            color: #666;
+        }
 
-    .section-heading-wrapper h4 {
-        color: #666;
-    }
+        .btn-theme {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
 
-    .btn-theme {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-    }
+        .btn-theme-invert {
+            background-color: #fff;
+            color: #007bff;
+            border: 1px solid #007bff;
+        }
 
-    .btn-theme-invert {
-        background-color: #fff;
-        color: #007bff;
-        border: 1px solid #007bff;
-    }
+        .btn-small {
+            padding: 5px 10px;
+        }
 
-    .btn-small {
-        padding: 5px 10px;
-    }
+        .heading-separator-horizontal {
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: #007bff;
+            margin: 10px auto;
+        }
 
-    .heading-separator-horizontal {
-        display: block;
-        width: 50px;
-        height: 2px;
-        background: #007bff;
-        margin: 10px auto;
-    }
+        .horizontal-newsletter input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 80%;
+            margin-right: 10px;
+        }
 
-    .horizontal-newsletter input {
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        width: 80%;
-        margin-right: 10px;
-    }
+        .horizontal-newsletter button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
 
-    .horizontal-newsletter button {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: #007bff;
-        color: #fff;
-        cursor: pointer;
-    }
+        /* Back to Top Button */
+        #backTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            display: none;
+        }
 
-    /* Back to Top Button */
-    #backTop {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #007bff;
-        color: #fff;
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
-        cursor: pointer;
-        display: none;
-    }
-</style>
+
+        .resultcontainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .column {
+            flex-basis: 25%;
+            margin: 0 2%
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .card-subtitle {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .list-group {
+            margin-bottom: 20px;
+        }
+
+        .list-group-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .list-group-item.active {
+                background-color: #337ab7;
+                color: #fff;
+            }
+
+            .list-group-item:hover {
+                background-color: #f5f5f5;
+                cursor: pointer;
+            }
+
+
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            .table th, .table td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .table th {
+                background-color: #f0f0f0;
+            }
+
+            .table tr:nth-child(even) {
+                background-color: #f5f5f5;
+            }
+
+            .table tr:hover {
+                background-color: #eee;
+            }
+        .section-heading-wrapper .text-left h2 {
+            text-align: right;
+            clear: both;
+        }
+        .section-heading-wrapper .text-left p, .section-heading-wrapper .text-left h4 {
+            text-align: right;
+        }
+
+        .partycontainer {
+            display: flex;
+            gap: 10px;
+            font-weight:400;
+            flex-wrap: wrap;
+            justify-content: center;
+            direction:rtl !important;
+        }
+
+            .partycontainer .card {
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: calc(33.33% - 20px);
+            }
+
+            .partycontainer .card-header {
+                background-color: #f0f0f0;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+                .partycontainer .card-header h3, .card-header h4 {
+                    margin: 0;
+                }
+
+        .partycontainer .card-body {
+            padding: 20px;
+        }
+
+        .partycontainer .card-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .partycontainer .card-body li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .partycontainer .card-body li:last-child {
+                border-bottom: none;
+            }
+
+        p {
+            text-align:right !important;
+            direction: rtl !important
+        }
+    </style>
 
 
 </head>
@@ -284,12 +419,12 @@
                         <div class="container text-center">
                             <div class="row">
                                 <div class="slider-bg" data-animation-in="fadeInLeft" data-animation-out="zoomInDown">
-                                    <div class="col-sm-12 wow fadeInLeft" data-wow-duration="1s">
+                                    <div class="col-sm-6 wow fadeInLeft" data-wow-duration="1s">
                                         <h3>كن جزءًا من التغيير </h3>
                                         <h2>
                                             !متحدين نقف، متفرقين نسقط
                                         </h2>
-                                        <a href="#" class="btn btn-theme btn-theme margin-top-24">تسجيل الدخول</a>
+                                        <a href="@Html.ActionLink("Login","USER")" class="btn btn-theme btn-theme margin-top-24">تسجيل الدخول</a>
                                         <a href="#" class="btn btn-theme btn-theme-invert margin-top-24">الاستعلام عن الخدمات</a>
                                     </div>
                                 </div> <!-- end .col-sm-12  -->
@@ -306,7 +441,7 @@
 
     <section class="section-content-block section-pure-white-bg">
 
-        <div class="container wow slideInUp" id="cardContainer">
+        <div class="container wow slideInUp" id="cardContainer" style="margin-right: -5%; padding:0; justify-content:space-evenly; width:100% !important">
 
             <div class="row section-heading-wrapper">
 
@@ -357,12 +492,10 @@
                                     النماذج المطلوبة للترشح للدائرة الانتخابية العامة
                                 </a>
                             </h5>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim mauris in lobortis pharetra long side.</div>
+                            <div>انطلقوا معنا في رحلة انتخابية مميزة، حيث نجعل الترشح والتصويت أسهل من أي وقت مضى. نقدم لكم النماذج المطلوبة للترشح للدائرة الانتخابية العامة لضمان سير عملية الترشح بسلاسة ونجاح.</div>
                             <a href="#" class="btn btn-theme btn-small theme-custom-box-shadow">إقرأ المزيد  <i class="fa fa-long-arrow-right"></i></a>
                         </div> <!--  end .main_highlights  -->
                     </div> <!--  end .col-md-3  -->
-
-
                 </div>
 
             </div>
@@ -371,129 +504,23 @@
 
     </section>
 
-    @*<div class="container" style="margin-top: 50px;" style="direction: rtl; text-align: right; font-family: Arial, sans-serif;">
-        <h2 style="text-align: center; margin-bottom: 30px;">مواعيد الانتخابات</h2>
-
-
-
-        </div>*@
-
-
-    <!--<section class="section-content-block section-custom-bg" data-bg_img='/Content/images/blue.jpg' data-bg_size='cover' data-bg_position='center center' data-bg_opacity="0" data-b>
-
-    <div class="container">
-
-
-        <div class="row section-heading-wrapper-alt">
-
-            <div class="col-md-12 col-sm-12 text-center no-img-separator">
-                <h4>Vote For Us</h4>
-                <span class="heading-separator heading-separator-horizontal"></span>
-                <h2 class="extra-large">GET READY FOR ELECTION</h2>
-
-            </div>-->
-    <!-- end .col-sm-10  -->
-    <!--</div>
-
-    <div class="row">
-
-        <div class="col-sm-12 text-center wow zoomIn">
-            <div id="countdown_block" data-countdown_date="2026/03/27"></div>
-        </div>-->
-    <!-- end .col-sm-12  -->
-    <!--</div>--> <!-- end .row  -->
-    <!--</div>--> <!-- end .container-fluid  -->
-    <!--</section>--> <!-- end .activity-section-1  -->
-    <br />
-    <br />
-
-    @*card_section*@
-
-
-
-
-
-
-
-
-
-
-
-    @*<div class="result_container">
-            <div class="row">
-                @for (int i = 0; i < Model.Count; i++)
-                {
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow border">
-                            <div class="card-body">
-                                <h5 class="card-title">Circle @(i + 1)</h5>
-                                <p class="card-text">Local Votes: @Model[i].localvotecounter</p>
-                                <p class="card-text">White Votes: @Model[i].whitelocalcounter</p>
-                                <p class="card-text">Total Votes: @Model[i].totalVotes</p>
-                                <p class="card-text">Threshold: @Model[i].threshold</p>
-
-                                <h6 class="card-subtitle mb-2 text-muted">Winning Lists</h6>
-                                @if (((IEnumerable<double>)Model[i].winning_lists).Any())
-                                {
-                                    foreach (var list in ((IEnumerable<double>)Model[i].winning_lists).Where(l => l.ActualSeats > 0))
-                                    {
-                                        <div class="list-group mb-3">
-                                            <h6 class="list-group-item list-group-item-action active">@list.LocalListCandidates - @list.NumberOfVotes (Seats: @list.ActualSeats)</h6>
-                                            @if (Model[i].winningCandidates.ContainsKey(list.ID))
-                                            {
-                                                foreach (var candidate in Model[i].winningCandidates[list.ID])
-                                                {
-                                                    <div class="list-group-item">@candidate.CandidateName - @candidate.NumberOfVotesCandidate</div>
-                                                }
-                                            }
-                                        </div>
-                                    }
-                                }
-                                else
-                                {
-                                    <p class="card-text">No winning lists</p>
-                                }
-
-                            </div>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>*@
-
-
-
-
-
-
-
-
-
-    <div class="container">
-        <!-- Include the Local Result Partial View -->
+    <div>
+        @*Include the Local Result Partial View*@
         @Html.Action("LocalResult", "Result")
     </div>
 
     <br />
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+    
+
+    <div class="container" style="margin-top: 50px;" style="direction: rtl; text-align: right; font-family: Arial, sans-serif;">
+        <h2 style="text-align: center; margin-bottom: 30px;">مواعيد الانتخابات</h2>
 
 
 
-
-
-
-
-
-    <div class="container">
-        <!-- Include the Local Result Partial View -->
+    </div>
+    <div class="container" >
+        @*Include the Local Result Partial View*@
         @Html.Action("Index", "DATEs")
     </div>
 
@@ -501,36 +528,21 @@
 
     <br />
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
 
 
 
     <div class="container">
-        <!-- Include the Local Result Partial View -->
+        @*Include the Local Result Partial View*@
         @Html.Action("IndexDebatsesHome", "Debates1")
     </div>
 
 
     <br />
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+ 
 
-    <div class="container">
-        <!-- Include the Local Result Partial View -->
+    <div>
+        @*Include the Local Result Partial View*@
         @Html.Action("Index", "PartyResult")
     </div>
 
@@ -601,19 +613,17 @@
 
     </section>  <!--  end .appointment-section  -->
 
-    <section class="section-content-block">
+    <section class="section-content-block" dir="rtl">
 
-        <div class="container wow slideInUp">
+        <div class="container wow slideInUp" dir="rtl">
 
             <div class="row section-heading-wrapper">
 
-                <div class="col-md-12 col-sm-12 text-left no-img-separator">
+                <div class="col-md-12 col-sm-12 text-left no-img-separator" >
                     <h2>الاعلانات </h2>
+                    <h4 >
+                        مكانكم الأمثل لعرض حملاتكم الانتخابية وتحقيق تواصل فعّال مع جمهور واسع وتعزيز تواجدكم الانتخابي .
 
-                    <span class="heading-separator heading-separator-horizontal"></span>
-                    <h4>
-                        Join and be a part of our campaigns and make it successful. Your awesome support and fluent participation
-                        is necessary for a successful campaign.
                     </h4>
                 </div> <!-- end .col-sm-12  -->
 
@@ -621,21 +631,10 @@
 
             <div class="row">
 
-
-
-
                 <div class="container">
-                    <!-- Include the Local Result Partial View -->
-                    @Html.Action("Publishs", "Ads")
+                @*Include the Local Result Partial View*@
+                @Html.Action("Publishs", "Ads")
                 </div>
-
-
-
-
-
-
-
-
 
                 <div class="row">
                     <div class="col-md-12 col-sm-12 text-center">
@@ -644,7 +643,7 @@
                 </div>
 
             </div> <!--  end .container  -->
-
+        </div>
     </section>
 
 

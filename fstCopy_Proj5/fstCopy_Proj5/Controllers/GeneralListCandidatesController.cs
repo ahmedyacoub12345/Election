@@ -118,11 +118,11 @@ namespace fstCopy_Proj5.Controllers
 
                 db.GeneralListCandidates.Add(generalListCandidate);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("ThankYou", "GeneralListCandidates");
             }
 
             ViewBag.GeneralListingName = new SelectList(db.GeneralListings, "Name", "Name", generalListCandidate.GeneralListingName);
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("ThankYou", "GeneralListCandidates");
         }
 
 
@@ -208,6 +208,10 @@ namespace fstCopy_Proj5.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult ThankYou()
+        {
+            return View();
         }
     }
 }

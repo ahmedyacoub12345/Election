@@ -10,28 +10,28 @@
         </div>
 
         <div class="login-form">
-            <h2 class="login-title">Login User</h2>
+            <h2 class="login-title">تسجيل الدخول </h2>
 
             @using (Html.BeginForm("LoginUser", "User", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
 
                 <div class="form-group">
-                    @Html.Label("National Number", new { @class = "form-label" })
-                    @Html.TextBox("NationalNumber", (string)ViewBag.NationalNumber, new { @class = "form-control", placeholder = "Enter your national number" })
+                    <label>الرقم الوطني</label>
+                    @Html.TextBox("NationalNumber", (string)ViewBag.NationalNumber, new { @class = "form-control", placeholder = "أدخل الرقم الوطني" })
                 </div>
 
                 <div class="form-group">
-                    @Html.Label("Email", new { @class = "form-label" })
-                    @Html.TextBox("Email", (string)ViewBag.Email, new { @class = "form-control", placeholder = "Enter your email" })
+                    <label>البريد الإلكتروني</label>
+                    @Html.TextBox("Email", (string)ViewBag.Email, new { @class = "form-control", placeholder = "أدخل البريد الإلكتروني" })
                 </div>
 
                 <div class="form-group">
-                    @Html.Label("Password", new { @class = "form-label" })
-                    @Html.Password("password", null, new { @class = "form-control", placeholder = "Enter your password" })
+                    <label>كلمة المرور</label>
+                    @Html.Password("password", null, new { @class = "form-control", placeholder = "أدخل كلمة المرور" })
                 </div>
 
-                <button type="submit" class="btn btn-submit">Login</button>
+                <button type="submit" class="btn btn-submit">تسجيل الدخول</button>
 
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             }
@@ -45,6 +45,7 @@
         background-color: #f4f4f4;
         margin: 0;
         padding: 0;
+        direction:rtl;
     }
 
     .login-container {
@@ -141,5 +142,8 @@
 
     .text-danger {
         color: #dc3545;
+    }
+    img {
+        max-width: 100%;
     }
 </style>

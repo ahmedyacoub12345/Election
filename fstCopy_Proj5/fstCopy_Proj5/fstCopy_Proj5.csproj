@@ -298,12 +298,31 @@
     <Content Include="Content\readme.txt" />
     <Content Include="Content\single.html" />
     <Content Include="Global.asax" />
+    <Content Include="images\Ajlon.jpg" />
+    <Content Include="images\amman1.jpg" />
+    <Content Include="images\Amman2.jpg" />
+    <Content Include="images\Amman3.jpg" />
+    <Content Include="images\aqaba.jpg" />
     <Content Include="images\As-salt.jpg" />
+    <Content Include="images\c221a1e2c34a0c95.jpg" />
+    <Content Include="images\download_1.jpg" />
+    <Content Include="images\general.jpg" />
     <Content Include="images\images.jpg" />
     <Content Include="images\images.png" />
+    <Content Include="images\irbid1.jpg" />
+    <Content Include="images\irbid2.jpg" />
+    <Content Include="images\jarash.jpg" />
     <Content Include="images\jordan.jpg" />
+    <Content Include="images\karak.jpg" />
     <Content Include="images\king.jpg" />
+    <Content Include="images\local.png" />
+    <Content Include="images\loginimg.png" />
+    <Content Include="images\Mafraq.jpg" />
+    <Content Include="images\Mansaf.png" />
+    <Content Include="images\petra.jpg" />
+    <Content Include="images\Screenshot 2024-05-08 163719.png" />
     <Content Include="images\share-image.png" />
+    <Content Include="images\zarqaa.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -459,6 +478,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\CotactUs.cshtml" />
     <Content Include="Views\Home\Faq.cshtml" />
+    <Content Include="Views\GeneralListCandidates\ThankYou.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

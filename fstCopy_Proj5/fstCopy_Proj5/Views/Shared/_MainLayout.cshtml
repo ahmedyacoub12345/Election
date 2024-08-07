@@ -4,7 +4,7 @@
 }
 
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,17 +25,11 @@
     <link href="@Url.Content("/Content/css/styles.css")" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" rel="stylesheet" />
 
-
-
-
-
-
-
-
-
-
-
-
+    <style>
+        img {
+            max-width: 100%;
+        }
+    </style>
     @RenderSection("head", required: false)
     <title>@ViewBag.Title</title>
 </head>
@@ -43,12 +37,12 @@
     <!-- HEADER -->
     <header class="main-header clearfix" data-sticky_header="true">
         <div class="top-bar hidden-xs hidden-sm visible-lg visible-md clearfix">
-            <div class="container">
+            <div class="container" style="background-color:darkgreen;">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <p>
-                            <span><i class="fa fa-phone"></i> <strong>Call Us:</strong> +962-790 000 000</span>
-                            <span>&nbsp;<i class="fa fa-envelope-o"></i> <strong>Email: </strong> support@site.com</span>
+                            <span><i class="fa fa-phone"></i> +962 790 000 000  </span> <strong> : للتواصل معنا </strong>
+                            <span>&nbsp;<i class="fa fa-envelope-o"></i>  support@site.com</span><strong> : البريد الالكتروني </strong>
                         </p>
                     </div>
                     <div class="col-md-4 col-sm-12">
@@ -84,7 +78,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li>@Html.ActionLink("من نحن", "About", "Home")</li>
                             <li>@Html.ActionLink("تواصل معنا", "CreateContact", "Contact")</li>
-                            <li>@Html.ActionLink("الأسئبة الشائعة", "Faq", "Home")</li>
+                            <li>@Html.ActionLink("الأسئلة الشائعة", "Faq", "Home")</li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">الانتخابات المحلية والإدارية <b class="caret"></b></a>
@@ -128,10 +122,10 @@
                             <div class="row">
                                 <div class="col-lg-10 col-lg-offset-1">
                                     <figure>
-                                        <img src="@Url.Content("/images/logo-footer.png")" alt="">
+                                        <img src="@Url.Content("~/images/loginimg.png")" alt="الشعار">
                                     </figure>
                                     <p>
-                                        We are the world’s largest and most trusted democratic political party. We have been working since 1973 with a prestigious vision to provide service. We work globally, organizing political campaigns to promote awareness of peace and happiness.
+                                        نحن أكبر وأوثق حزب سياسي ديمقراطي في العالم. لقد كنا نعمل منذ عام 1973 برؤية مرموقة لتقديم الخدمة. نحن نعمل عالميًا، وننظم حملات سياسية لتعزيز الوعي بالسلام والسعادة.
                                     </p>
                                     <div class="footer-social-icons">
                                         <a href="#"><i class="fa fa-facebook"></i></a>
@@ -149,46 +143,47 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="footer-widget">
                             <div class="footer-widget-header">
-                                <h3>Subscribe Us</h3>
+                                <h3>اشترك معنا</h3>
                             </div>
-                            <p>Sign up for our newsletter and stay updated with our latest news.</p>
+                            <p>اشترك في نشرتنا الإخبارية وابقَ على اطلاع بآخر أخبارنا.</p>
                             <div class="footer-subscription">
-                                <input id="mc4wp_email" class="form-control" placeholder="Enter Your Email" name="EMAIL" type="email">
-                                <input class="btn btn-default" value="Subscribe Now" type="submit">
+                                <input id="mc4wp_email" class="form-control" placeholder="أدخل بريدك الإلكتروني" name="EMAIL" type="email">
+                                <input class="btn btn-default" value="اشترك الآن" type="submit">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
                         <div class="footer-widget">
                             <div class="footer-widget-header">
-                                <h3>Support Links</h3>
+                                <h3>روابط مباشرة</h3>
                             </div>
                             <ul class="footer-useful-links">
-                                <li><a href="#"><i class="fa fa-caret-right fa-footer"></i> Thalassemia</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right fa-footer"></i> Cell Elofrosis</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right fa-footer"></i> Myelodysasia</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right fa-footer"></i> Voters Count</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right fa-footer"></i> Hemolytimia</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right fa-footer"></i> Ychromas Eosis</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right fa-footer"></i> Hyrcoagulable</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right fa-footer"></i> Thrombo Xtosis</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right fa-footer"></i> Sicklenemiaxs</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right fa-footer"></i> Aplastic Anemia</a></li>
+                                <li>@Html.ActionLink("الصفحة الرئيسية", "Index", "Home")</li>
+                                <li>@Html.ActionLink("من نحن", "About", "Home")</li>
+                                <li>@Html.ActionLink("تواصل معنا", "CreateContact", "Contact")</li>
+                                <li>@Html.ActionLink("الأسئبة الشائعة", "Faq", "Home")</li>
+                                <li>@Html.ActionLink("الانتخابات النيابية", "Events", "Home")</li>
+                                <li>@Html.ActionLink("الانتخابات اللامركزية", "EventSingle", "Home")</li>
+                                <li>@Html.ActionLink("الانتخابات البلدية", "EventSingle", "Home")</li>
+                                <li>@Html.ActionLink("طلب الترشح المحلي", "CreateList", "LocalListCandidates")</li>
+                                <li>@Html.ActionLink("طلب الترشح الحزبي", "Create", "GeneralListCandidates")</li>
+                                <li>@Html.ActionLink("طلب الإعلان", "addAdvertisement", "Ads")</li>
+                                <li>@Html.ActionLink("طلب المناظرات", "Create", "Debates1")</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="footer-widget">
                             <div class="footer-widget-header">
-                                <h3>Contact Us</h3>
+                                <h3>تواصل معنا</h3>
                             </div>
                             <div class="textwidget">
                                 <i class="fa fa-envelope-o fa-contact"></i>
                                 <p><a href="mailto:support@donation.com">support@donation.com</a><br><a href="mailto:helpme@donation.com">helpme@donation.com</a></p>
                                 <i class="fa fa-location-arrow fa-contact"></i>
-                                <p>Road-2,3/A East Shibgonj<br>Sylhet-3100, Bangladesh</p>
+                                <p>الطريق-2، 3/أ شرق شيفجونج<br>سيلهيت-3100، بنغلاديش</p>
                                 <i class="fa fa-phone fa-contact"></i>
-                                <p>Office: (+880) 0823 560 433<br>Cell: (+880) 0723 161 343</p>
+                                <p>المكتب: (+880) 0823 560 433<br>الجوال: (+880) 0723 161 343</p>
                             </div>
                         </div>
                     </div>
