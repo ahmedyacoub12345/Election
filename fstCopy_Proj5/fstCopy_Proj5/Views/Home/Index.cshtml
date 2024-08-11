@@ -413,7 +413,7 @@
             </div> <!-- end .slider_item_container  -->
             <!--  End First Slider Item  -->
             <!--  Start Second Slider Item  -->
-            <div class="slider_item_container" data-bg_img="/Content/images/king.jpg" data-bg_color="#111111" data-bg_opacity="0.5">
+            <div class="slider_item_container" data-bg_img="Content/images/king.jpg" data-bg_color="#111111" data-bg_opacity="0.5">
                 <div class="item">
                     <div class="slider-content">
                         <div class="container text-center">
@@ -441,14 +441,14 @@
 
     <section class="section-content-block section-pure-white-bg">
 
-        <div class="container wow slideInUp" id="cardContainer" style="margin-right: -5%; padding:0; justify-content:space-evenly; width:100% !important">
+        <div class="container wow slideInUp" id="cardContainer" style=" margin: 4% !important; justify-content:space-evenly; width:100% !important; ">
 
             <div class="row section-heading-wrapper">
 
                 <div class="col-md-12 col-sm-12 text-center no-img-separator">
-                    <h2 class="extra-large">PETER'S PROMISES </h2>
+                    <h2 class="extra-large"> عن الانتخابات </h2>
                     <span class="heading-separator heading-separator-horizontal"></span>
-                    <h4>Pellentesque habitant morbi tristique senectus et netus et malesa dalas.</h4>
+                    <h4></h4>
 
                 </div> <!-- end .col-sm-12  -->
 
@@ -504,44 +504,75 @@
 
     </section>
 
-    <div>
-        @*Include the Local Result Partial View*@
-        @Html.Action("LocalResult", "Result")
-    </div>
 
-    <br />
-    <br />
-    
+
+
+
 
     <div class="container" style="margin-top: 50px;" style="direction: rtl; text-align: right; font-family: Arial, sans-serif;">
         <h2 style="text-align: center; margin-bottom: 30px;">مواعيد الانتخابات</h2>
-
+        <br />
+        <br />
+        <br />
 
 
     </div>
-    <div class="container" >
+    <div class="container">
         @*Include the Local Result Partial View*@
         @Html.Action("Index", "DATEs")
     </div>
 
 
 
-    <br />
-    <br />
-
-
-
-    <div class="container">
-        @*Include the Local Result Partial View*@
-        @Html.Action("IndexDebatsesHome", "Debates1")
-    </div>
 
 
     <br />
     <br />
- 
+    <br />
+
+    <br />
+    <br />
+    <br />
+
+
+
+
 
     <div>
+
+        <h2 style="text-align:center;">نتائج الانتخابات المحلية </h2>
+        <br />
+        <br />
+        @*Include the Local Result Partial View*@
+        @Html.Action("LocalResult", "Result")
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+
+    <br />
+    <br />
+
+
+
+    <!--<div class="container">-->
+        @*Include the Local Result Partial View*@
+        <!--@Html.Action("IndexDebatsesHome", "Debates1")
+    </div>-->
+
+
+    <br />
+    <br />
+
+
+    <div>
+        <h2 style="text-align:center;">نتائج الانتخابات الحزبية  </h2>
+        <br />
+        <br />
         @*Include the Local Result Partial View*@
         @Html.Action("Index", "PartyResult")
     </div>
@@ -619,9 +650,9 @@
 
             <div class="row section-heading-wrapper">
 
-                <div class="col-md-12 col-sm-12 text-left no-img-separator" >
+                <div class="col-md-12 col-sm-12 text-left no-img-separator">
                     <h2>الاعلانات </h2>
-                    <h4 >
+                    <h4>
                         مكانكم الأمثل لعرض حملاتكم الانتخابية وتحقيق تواصل فعّال مع جمهور واسع وتعزيز تواجدكم الانتخابي .
 
                     </h4>
@@ -632,8 +663,8 @@
             <div class="row">
 
                 <div class="container">
-                @*Include the Local Result Partial View*@
-                @Html.Action("Publishs", "Ads")
+                    @*Include the Local Result Partial View*@
+                    @Html.Action("Publishs", "Ads")
                 </div>
 
                 <div class="row">
@@ -647,43 +678,7 @@
     </section>
 
 
-    <section class="section-content-block section-custom-bg" data-bg_img="/Content/images/subscribe_bg.jpg" data-bg_repeat="no-repeat" data-bg_size="cover" data-bg_position="top right" data-bg_color="#264676" data-bg_opacity="0.9" style="width:100% !important">
-
-        <div class="container">
-
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="row section-heading-wrapper-alt margin-bottom-5">
-
-                        <div class="col-md-12 col-sm-12 text-left no-img-separator">
-                            <h4>Subscribe Us</h4>
-                            <span class="heading-separator heading-separator-horizontal"></span>
-                            <h2 class="text-capitalize">
-                                CAMPAIGN <br>NEWS & UPDATES
-                            </h2>
-
-                        </div> <!-- end .col-sm-10  -->
-
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="horizontal-newsletter margin-top-60">
-                        <form id="mc-form" class="mc-form fix" action="#">
-                            <div class="news-subscription square-layout">
-                                <input id="mc-email" name="EMAIL" placeholder="Email Address..." type="email">
-                                <button id="mc-submit" type="submit"> Submit</button>
-                            </div>
-                        </form>
-                    </div> <!--  end .footer-widget  -->
-                </div>
-            </div>
-
-        </div>
-
-    </section> <!-- تحديد الخريطة باستخدام JavaScript -->
-
-
+   
 
 
 
