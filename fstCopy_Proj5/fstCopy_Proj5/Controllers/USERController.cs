@@ -43,12 +43,20 @@ namespace E_Voting.Controllers
                     existingUser.Password = newPassword;
                     DB.SaveChanges();
 
-                    SendConfirmationEmail(existingUser.Email, newPassword);
-
-                    ViewBag.Emailsent = "The code has been sent to your Email";
+                    try
+                    {
+                        SendConfirmationEmail(existingUser.Email, newPassword);
+                        ViewBag.Emailsent = "The code has been sent to your Email";
+                    }
+                    catch (Exception emailEx)
+                    {
+                        // Log email-specific exceptions
+                        ModelState.AddModelError("", "Failed to send email. Please try again later.");
+                        Console.WriteLine("Email Exception: " + emailEx.Message);
+                    }
                 }
 
-                // تخزين المستخدم في الجلسة وإعادة التوجيه إلى LoginUser
+                // Store user in session and redirect to LoginUser
                 Session["LoggedUser"] = JsonConvert.SerializeObject(existingUser);
                 return RedirectToAction("LoginUser", new { ID = user.ID });
             }
@@ -60,6 +68,7 @@ namespace E_Voting.Controllers
 
             return View();
         }
+
 
         public ActionResult LoginUser(string nationalNumber)
         {
@@ -98,9 +107,9 @@ namespace E_Voting.Controllers
         // Send Email
         private void SendConfirmationEmail(string toEmail, string confirmationCode)
         {
-            string fromEmail = System.Configuration.ConfigurationManager.AppSettings["FromEmail"];
-            string smtpUsername = System.Configuration.ConfigurationManager.AppSettings["SmtpUsername"];
-            string smtpPassword = System.Configuration.ConfigurationManager.AppSettings["SmtpPassword"];
+            string fromEmail = "techlearnhub.contact@gmail.com";
+            string smtpUsername = "techlearnhub.contact@gmail.com";
+            string smtpPassword = "lyrlogeztsxclank";
 
             string subjectText = "Your Confirmation Code";
             string messageText = $"Your confirmation code is {confirmationCode}";
