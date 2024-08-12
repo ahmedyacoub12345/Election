@@ -479,6 +479,7 @@
     <Content Include="Views\Home\CotactUs.cshtml" />
     <Content Include="Views\Home\Faq.cshtml" />
     <Content Include="Views\GeneralListCandidates\ThankYou.cshtml" />
+    <Content Include="Views\Home\Map.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

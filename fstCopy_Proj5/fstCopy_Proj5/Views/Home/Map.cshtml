@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map with Electoral Circles</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+<body>
+
+    <div id="map" style="height: 600px; width: 100%;"></div>
+    <script>
+        // Initialize the map and set its view to Jordan
+        var map = L.map('map').setView([31.9454, 35.9284], 7); // [latitude, longitude], zoom level
+
+        // Add the tile layer (this is the map layer)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Function to create a circle with a comment
+        function createCircle(lat, lng, radius, comment) {
+            L.circle([lat, lng], {
+                color: 'blue',
+                fillColor: '#30f',
+                fillOpacity: 0.5,
+                radius: radius
+            }).addTo(map).bindTooltip(comment, { permanent: false, direction: 'top', offset: [0, -15] });
+        }
+
+        // Define the approximate center and radius (in meters) for each electoral circle
+        createCircle(31.9550, 35.9250, 5000, 'Amman: Central Amman');
+        createCircle(32.0833, 36.0667, 5000, 'Zarqa: Zarqa City');
+        createCircle(32.5556, 35.9167, 5000, 'Irbid: Irbid City');
+        createCircle(32.3417, 36.2333, 5000, 'Mafraq: Mafraq City');
+        createCircle(31.8500, 35.7000, 5000, 'Karak: Karak City');
+        createCircle(30.1944, 35.7350, 5000, 'Ma’an: Ma\'an City');
+        createCircle(30.8322, 35.5900, 5000, 'Tafilah: Tafilah City');
+        createCircle(32.3333, 35.7667, 5000, 'Ajloun: Ajloun City');
+        createCircle(32.2778, 35.8917, 5000, 'Jerash: Jerash City');
+        createCircle(31.7167, 35.8000, 5000, 'Madaba: Madaba City');
+        createCircle(31.6986, 35.4525, 5000, 'Dead Sea Area');
+
+    </script>
+</body>
+</html>

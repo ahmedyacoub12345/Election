@@ -25,6 +25,10 @@ namespace fstCopy_Proj5.Controllers
         {
             return View();
         }
+        public ActionResult Map()
+        {
+            return View(); 
+        }
     }
 
 }
